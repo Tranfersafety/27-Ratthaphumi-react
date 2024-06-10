@@ -4,7 +4,11 @@ function Owner() {
   return (
     <div className="flex flex-col items-center ">
       <h1 className="text-6xl font-bold m-12">Safe - group1 - 27</h1>
-      <img src="/src/assets/safe.JPG" alt="mypic" className="w-2/5" />
+      <img
+        src="https://github.com/Tranfersafety/27-Ratthaphumi-react/blob/main/src/assets/safe.JPG?raw=true"
+        alt="mypic"
+        className="w-2/5"
+      />
       <span className="w-3/4 m-12 text-2xl">
         I am Ratthaphumi Sangthin. I just graduated from Generation Thailand
         Boot Camp #7. I worked in a laboratory for 3 years in the COVID-19

@@ -2,8 +2,8 @@ import { Outlet, Link } from "react-router-dom";
 import { useState } from "react";
 
 function Nav() {
-  const [employer, setEmployer] = useState([]);
-  const [id, setId] = useState(1);
+  
+  // const [id, setId] = useState(1);
 
   return (
     <div className="h-screen bg-[#E7E8E7]">
@@ -17,7 +17,7 @@ function Nav() {
           </li>
         </ul>
       </nav>
-      <Outlet context={{ setEmployer, employer, id, setId }} />
+      <Outlet  />
     </div>
   );
 }

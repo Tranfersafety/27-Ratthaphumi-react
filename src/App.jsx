@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useOutletContext } from "react-router-dom";
 
 function App() {
   const [header, setHeader] = useState("");
-  const { setEmployer, employer, id, setId } = useOutletContext();
+  const [employer, setEmployer] = useState([]);
 
   return (
     <div className="flex flex-col items-center h- bg-[#E7E8E7]">
@@ -25,7 +24,7 @@ function App() {
           </Link>
         </li>
       </ul>
-      <Outlet context={{ setEmployer, employer, setHeader, id, setId }} />
+      <Outlet context={{ setEmployer, employer, setHeader }} />
     </div>
   );
 }

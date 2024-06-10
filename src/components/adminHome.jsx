@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 
 function AdminHome() {
-  const { employer, setEmployer, setHeader, id, setId } = useOutletContext();
+  const { employer, setEmployer, setHeader } = useOutletContext();
   const [reload, setReload] = useState(false);
 
   useEffect(() => {
@@ -14,10 +14,9 @@ function AdminHome() {
           "https://jsd5-mock-backend.onrender.com/members"
         );
         setEmployer(response.data);
-      } catch (error) {
-        console.log("error");
+      } catch {
+        alert("can't access API");
       }
-      // https://jsd5-mock-backend.onrender.com/
     };
     fetchEmployer();
   }, [reload]);
@@ -25,12 +24,6 @@ function AdminHome() {
   const saveEmployer = async (e) => {
     e.preventDefault();
 
-    // const newEmployer = {
-
-    //   name: e.target.fName.value,
-    //   lastname: e.target.lName.value,
-    //   position: e.target.position.value,
-    // };
     try {
       const response = await axios.post(
         "https://jsd5-mock-backend.onrender.com/members",
@@ -40,27 +33,29 @@ function AdminHome() {
           position: e.target.position.value,
         }
       );
-      // setEmployer();
+
       setReload(!reload);
-    } catch (error) {
-      console.log("error");
+    } catch {
+      alert("can't put data");
     }
 
-    // setEmployer((prev) => [...prev, newEmployer]);
     e.target.reset();
   };
 
   const deleteRow = async (id) => {
-    await axios.delete(`https://jsd5-mock-backend.onrender.com/member/${id}`, {
-      member_id: id,
-    });
+    const deleteData = await axios.delete(
+      `https://jsd5-mock-backend.onrender.com/member/${id}`,
+      {
+        member_id: id,
+      }
+    );
     setReload(!reload);
   };
 
-  const deleteAll = () => {
-    setId(1);
-    setEmployer([]);
-  };
+  // const deleteAll = () => {
+  //   setId(1);
+  //   setEmployer([]);
+  // };
 
   console.log(employer);
 
@@ -129,12 +124,12 @@ function AdminHome() {
           ))}
         </tbody>
       </table>
-      <input
+      {/* <input
         type="button"
         value="Delete All"
         onClick={deleteAll}
         className="px-4 py-2 bg-gray-500 text-white rounded-lg  w-36"
-      />
+      /> */}
     </div>
   );
 }
