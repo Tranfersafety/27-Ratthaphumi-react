@@ -97,7 +97,7 @@ function AdminHome() {
           />
         </div>
       </form>
-      <table className="w-full bg-white rounded-lg shadow-md border border border-black">
+      <table className="w-full bg-white rounded-lg shadow-md border  border-black">
         <thead className="bg-gray-200 border border-black">
           <tr className="grid grid-cols-4 p-4 ">
             <th className="text-left ">Name</th>

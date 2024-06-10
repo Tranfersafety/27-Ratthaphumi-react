@@ -1,11 +1,23 @@
 import { useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
+import axios from "axios";
 
 function UserHome() {
-  const { employer, setHeader } = useOutletContext();
+  const { employer, setHeader, setEmployer } = useOutletContext();
 
   useEffect(() => {
     setHeader("Home - usersector");
+    const fetchEmployer = async () => {
+      try {
+        const response = await axios.get(
+          "https://jsd5-mock-backend.onrender.com/members"
+        );
+        setEmployer(response.data);
+      } catch {
+        alert("can't access API");
+      }
+    };
+    fetchEmployer();
   });
 
   return (

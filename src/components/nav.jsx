@@ -1,10 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
-import { useState } from "react";
 
 function Nav() {
-  
-  // const [id, setId] = useState(1);
-
   return (
     <div className="h-screen bg-[#E7E8E7]">
       <nav className="flex justify-end   h-20 border-b-2 border-black">
@@ -17,7 +13,7 @@ function Nav() {
           </li>
         </ul>
       </nav>
-      <Outlet  />
+      <Outlet />
     </div>
   );
 }

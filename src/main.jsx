@@ -1,8 +1,8 @@
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AdminHome from "./components/adminHome.jsx";
 import Nav from "./components/nav.jsx";
 import Owner from "./components/owner.jsx";
@@ -36,7 +36,5 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
- 
-    <RouterProvider router={router} />
-  
+  <RouterProvider router={router} />
 );

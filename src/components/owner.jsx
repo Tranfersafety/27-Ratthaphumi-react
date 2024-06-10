@@ -1,5 +1,3 @@
-import React from "react";
-
 function Owner() {
   return (
     <div className="flex flex-col items-center ">
